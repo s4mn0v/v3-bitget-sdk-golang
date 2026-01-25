@@ -133,3 +133,8 @@ func (p *MixOrderClient) FollowerQueryHistoryOrders(params map[string]string) (s
 	resp, err := p.BitgetRestClient.DoGet("/api/v2/copy/mix-follower/query-history-orders", params)
 	return resp, err
 }
+
+func (p *MixOrderClient) FillHistory(params map[string]string) (string, error) {
+	resp, err := p.BitgetRestClient.DoGet("/api/v2/mix/order/fill-history", params)
+	return resp, err
+}
