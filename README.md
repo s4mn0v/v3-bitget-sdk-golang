@@ -11,9 +11,12 @@ For the original version, please visit the link below:
 
 # Modifications Made
 
-- Adding new model for v2, listing historical transaction data of FUTURES operations  
+- Adding new model for v2, listing FILLED historical transaction data of FUTURES operations  
   > Ref: [Get Fill History](https://www.bitget.com/api-doc/contract/trade/Get-Fill-History)  
   > Modified Code:  [new model](./internal/model/history.go)  [edited mixorderclient.go](./pkg/client/v2/mixorderclient.go)
+- Adding func for get HISTORY POSITION of all symbols in FUTURES
+  > Ref: [Get History Position](https://www.bitget.com/api-doc/contract/position/Get-History-Position)
+  > Modified Code: [edited mixaccountclient.go](./pkg/client/v2/mixaccountclient.go)
 
 
 Usage example in app.go:
