@@ -70,3 +70,19 @@ func (p *MixMarketClient) PositionTier(params map[string]string) (string, error)
 	resp, err := p.BitgetRestClient.DoGet("/api/v2/mix/market/query-position-lever", params)
 	return resp, err
 }
+
+func (p *MixMarketClient) TakerBuySellVolume(params map[string]string) (string, error) {
+	return p.BitgetRestClient.DoGet("/api/v2/mix/market/taker-buy-sell", params)
+}
+
+func (p *MixMarketClient) LongShortRatio(params map[string]string) (string, error) {
+	return p.BitgetRestClient.DoGet("/api/v2/mix/market/long-short", params)
+}
+
+func (p *MixMarketClient) MarketFundFlow(params map[string]string) (string, error) {
+	return p.BitgetRestClient.DoGet("/api/v2/spot/market/fund-flow", params)
+}
+
+func (p *MixMarketClient) HistoryPositionLongShort(params map[string]string) (string, error) {
+	return p.BitgetRestClient.DoGet("/api/v2/mix/market/position-long-short", params)
+}
