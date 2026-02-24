@@ -74,6 +74,52 @@ For the original version, please visit the link below:
     - Improved function grouping and readability
     - Modified Code: `pkg/client/v2/mixorderclient.go`
 
+- **Public, Tax, Convert, Sub-Account & Market Intelligence Extensions (v2)**
+
+  - Public Information (Common Client)
+    - Added global **Server Time** endpoint.
+    - Added **Announcements** query.
+    - Added **Trade Rate (symbol-specific)** query.
+    - Added **All Trade Rates (business line)** query.
+    - New file: `pkg/client/v2/commonclient.go`
+
+  - Tax Records (Tax Client)
+    - Added **Spot transaction records** export.
+    - Added **Futures transaction records** export.
+    - Added **Margin transaction records** export.
+    - Added **P2P transaction records** export.
+    - New file: `pkg/client/v2/taxclient.go`
+
+  - Convert & BGB Conversion (Convert Client)
+    - Added full **Flash Convert (Swap)** suite:
+      - Supported currencies
+      - Quoted price
+      - Execute convert trade
+      - Convert history records
+    - Added **BGB Dust Conversion**:
+      - Supported coins list
+      - Execute BGB convert
+      - BGB convert records
+    - New file: `pkg/client/v2/convertclient.go`
+
+  - Virtual Sub-Account & API Key Management (User Client)
+    - Added **Create virtual sub-account**
+    - Added **Modify virtual sub-account**
+    - Added **Virtual sub-account list**
+    - Added **Create sub-account API key**
+    - Added **Modify sub-account API key**
+    - Added **Sub-account API key list**
+    - New file: `pkg/client/v2/userclient.go`
+
+  - Market Intelligence / Big Data Extensions
+    - Added **Taker Buy/Sell Volume**
+    - Added **Long/Short Ratio**
+    - Added **Market Fund Flow**
+    - Added **Historical Position Long/Short Ratio**
+    - Extended file: `pkg/client/v2/mixmarketclient.go`
+  
+  Based on the updated Bitget documentation (Public, Tax, Sub-accounts, Convert, and extended Market Data), a significant number of missing endpoints were implemented and grouped into new client files to preserve the SDK’s existing architecture.
+
 ---
 
 # Branch Structure and Module Usage
